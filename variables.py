@@ -21,3 +21,5 @@ BLACK = (0,0,0)
 #text
 introfont = pygame.font.Font('resources/fonts/GOTHICB.ttf', 25)
 introtext = introfont.render('<=> Micro Space <=>', False, BLACK)
+
+buttonfont = pygame.font.Font('resources/fonts/GOTHICB.ttf', 14)
