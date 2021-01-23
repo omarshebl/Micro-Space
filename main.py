@@ -90,9 +90,9 @@ def getusername():
     screenupdate(variables.BLACK)
 
 def drawbuttons():
-    menuB1.draw(gamescreen)
-    menuB2.draw(gamescreen)
-    menuB3.draw(gamescreen)
+    menuB1.draw(gamescreen, variables.WHITE)
+    menuB2.draw(gamescreen, variables.WHITE)
+    menuB3.draw(gamescreen, variables.WHITE)
     screenupdate()
 
 def mainmenu():
@@ -111,10 +111,8 @@ def mainmenu():
                 if menuB2.isOver(pos):
                     pass #TODO show high scores
                 if menuB3.isOver(pos):
-                    pass #TODO exit
-
-
-
+                    exiting = True
+                    pygame.quit()
 
 # ---------------------- main loop -----------------------
 while not exiting:
