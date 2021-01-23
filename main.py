@@ -4,6 +4,8 @@ import variables # game variables file "variables.py"
 
 # exit variable
 exiting = False
+
+# startup variable
 startup = True
 
 # initiation
@@ -13,7 +15,7 @@ pygame.font.init()
 # window creation
 gamescreen = pygame.display.set_mode(variables.screensize)
 
-# icon & title set
+# icon & caption set
 pygame.display.set_caption("Micro Space")
 pygame.display.set_icon(variables.titlelogo)
 
