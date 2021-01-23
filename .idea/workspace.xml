@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93dd1738-8d51-4459-9a39-5e0edaf72d56" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/classes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/variables.py" afterDir="false" />
@@ -84,15 +85,6 @@
     </task>
     <servers />
   </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
@@ -109,29 +101,29 @@
       <screen x="0" y="25" width="1680" height="1025" />
     </state>
     <state x="0" y="0" width="1680" height="1050" key="FileChooserDialogImpl/0.0.1680.1050@0.0.1680.1050" timestamp="1611359784975" />
-    <state width="1638" height="155" key="GridCell.Tab.0.bottom" timestamp="1611423575705">
+    <state width="1638" height="155" key="GridCell.Tab.0.bottom" timestamp="1611425782441">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="155" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1611423575705" />
-    <state width="1638" height="155" key="GridCell.Tab.0.center" timestamp="1611423575703">
+    <state width="1638" height="155" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1611425782441" />
+    <state width="1638" height="155" key="GridCell.Tab.0.center" timestamp="1611425782439">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="155" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1611423575703" />
-    <state width="1638" height="155" key="GridCell.Tab.0.left" timestamp="1611423575702">
+    <state width="1638" height="155" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1611425782439" />
+    <state width="1638" height="155" key="GridCell.Tab.0.left" timestamp="1611425782438">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="155" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1611423575702" />
-    <state width="1638" height="155" key="GridCell.Tab.0.right" timestamp="1611423575704">
+    <state width="1638" height="155" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1611425782438" />
+    <state width="1638" height="155" key="GridCell.Tab.0.right" timestamp="1611425782440">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="155" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1611423575704" />
+    <state width="1638" height="155" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1611425782440" />
     <state x="349" y="161" key="SettingsEditor" timestamp="1611360659526">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="349" y="161" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1611360659526" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Micro_Space$main.coverage" NAME="main Coverage Results" MODIFIED="1611423747046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Micro_Space$main.coverage" NAME="main Coverage Results" MODIFIED="1611425782410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Microprocessors_Bonus$main.coverage" NAME="main Coverage Results" MODIFIED="1611274763937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

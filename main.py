@@ -1,7 +1,7 @@
 import pygame
 import time
 import variables # game variables file "variables.py"
-
+from classes import button
 
 username = "omar"
 
@@ -22,34 +22,10 @@ gamescreen = pygame.display.set_mode(variables.screensize)
 pygame.display.set_caption("Micro Space")
 pygame.display.set_icon(variables.titlelogo)
 
-class button:
-    def __init__(self, color, highcolor, x, y, width, height, text=''):
-        self.highcolor = highcolor
-        self.ocolor = color
-        self.color = color
-        self.x = x
-        self.y = y
-        self.width = width
-        self.height = height
-        self.text = text
-
-    def draw(self, win, outline=None):
-        if outline:
-            pygame.draw.rect(win, outline, (self.x - 2, self.y - 2, self.width + 4, self.height + 4), 0)
-
-        pygame.draw.rect(win, self.color, (self.x, self.y, self.width, self.height), 0)
-
-        if self.text != '':
-            font = variables.buttonfont
-            text = font.render(self.text, True, (0, 0, 0))
-            win.blit(text, (self.x + (self.width / 2 - text.get_width() / 2), self.y + (self.height / 2 - text.get_height() / 2)))
-
-    def isOver(self, pos):
-        if (pos[0] > self.x) and (pos[0] < (self.x + self.width)) and (pos[1] > self.y) and (pos[1] < (self.y + self.height)):
-            self.color = self.highcolor
-            return True
-        self.color = self.ocolor
-        return False
+#set main menu buttons
+menuB1 = button(variables.buttonC,variables.buttonH, variables.buttonTC, variables.startposB1, variables.wh, variables.textB1)
+menuB2 = button(variables.buttonC,variables.buttonH, variables.buttonTC, variables.startposB2, variables.wh, variables.textB2)
+menuB3 = button(variables.buttonC,variables.buttonH, variables.buttonTC, variables.startposB3, variables.wh, variables.textB3)
 
 def checkexiting():
     global exiting
@@ -113,10 +89,32 @@ def getusername():
 
     screenupdate(variables.BLACK)
 
+def drawbuttons():
+    menuB1.draw(gamescreen)
+    menuB2.draw(gamescreen)
+    menuB3.draw(gamescreen)
+    screenupdate()
+
 def mainmenu():
     global exiting
     while not exiting:
         checkexiting()
+        drawbuttons()
+        for event in pygame.event.get():
+            pos = pygame.mouse.get_pos()
+            menuB1.isOver(pos)
+            menuB2.isOver(pos)
+            menuB3.isOver(pos)
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if menuB1.isOver(pos):
+                    pass #TODO play games
+                if menuB2.isOver(pos):
+                    pass #TODO show high scores
+                if menuB3.isOver(pos):
+                    pass #TODO exit
+
+
+
 
 # ---------------------- main loop -----------------------
 while not exiting:
