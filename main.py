@@ -2,6 +2,9 @@ import pygame
 import time
 import variables # game variables file "variables.py"
 
+
+username = "omar"
+
 # exit variable
 exiting = False
 
@@ -74,6 +77,42 @@ def screenupdate(color=None):
         gamescreen.fill(color)
     pygame.display.flip()
 
+def getusername():
+    global username
+    screenupdate(variables.BLACK)
+    exitinguser = False
+    startup = True
+    while not exitinguser:
+        checkexiting()
+        if startup:
+            screenupdate(variables.BLACK)
+            gamescreen.blit(variables.getusernametext, variables.screenstartuppoint)
+            screenupdate()
+            startup=False
+        for event in pygame.event.get():
+            screenupdate(variables.BLACK)
+            gamescreen.blit(variables.getusernametext, variables.screenstartuppoint)
+            if event.type == pygame.KEYDOWN:
+                if event.key==pygame.K_BACKSPACE:
+                    if len(username)>0:
+                        username = username[:-1]
+                elif event.key==pygame.K_RETURN:
+                    exitinguser = True
+                elif event.key==pygame.K_ESCAPE:
+                    exitinguser = True
+                    username=""
+                    global exiting
+                    exiting = True
+                    break
+                elif event.key:
+                    if (not len(username) > 15) and event.unicode :
+                        username += event.unicode
+            usernametext = variables.introfont.render(username, False, variables.PURPLE)
+            gamescreen.blit(usernametext, variables.usernamepoint)
+            screenupdate()
+
+    screenupdate(variables.BLACK)
+
 def mainmenu():
     global exiting
     while not exiting:
@@ -82,5 +121,6 @@ def mainmenu():
 # ---------------------- main loop -----------------------
 while not exiting:
     checkexiting()
-    screenstartup()
+    #screenstartup()
+    #getusername()
     mainmenu()
