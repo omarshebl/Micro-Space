@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93dd1738-8d51-4459-9a39-5e0edaf72d56" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/GamePlayingGuide.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InstallationGuide.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/References.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StudentInfo.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Notes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentInfo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/StudentInfo.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
