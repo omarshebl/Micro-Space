@@ -42,15 +42,15 @@ mainfont = pygame.font.Font('resources/fonts/GOTHIC.ttf', 25)
 Xgame1 = 800
 Ygame1 = 800
 screensizegame1 = (Xgame1,Ygame1)
-RED_SPACE_SHIP = pygame.image.load("resources/images/game1/pixel_ship_red_small.png")
-GREEN_SPACE_SHIP = pygame.image.load("resources/images/game1/pixel_ship_green_small.png")
-BLUE_SPACE_SHIP = pygame.image.load("resources/images/game1/pixel_ship_blue_small.png")
-YELLOW_SPACE_SHIP = pygame.image.load("resources/images/game1/pixel_ship_yellow.png")
-RED_LASER = pygame.image.load("resources/images/game1/pixel_laser_red.png")
-GREEN_LASER = pygame.image.load("resources/images/game1/pixel_laser_green.png")
-BLUE_LASER = pygame.image.load("resources/images/game1/pixel_laser_blue.png")
-YELLOW_LASER = pygame.image.load("resources/images/game1/pixel_laser_yellow.png")
-BG = pygame.transform.scale(pygame.image.load("resources/images/game1/background-black.png"), screensizegame1)
+alien = pygame.image.load("resources/images/game1/alien.png")
+alien1 = pygame.image.load("resources/images/game1/alien1.png.png")
+alien2 = pygame.image.load("resources/images/game1/alien2.png")
+mainplayerimg = pygame.image.load("resources/images/game1/space-invaders.png")
+redlzr = pygame.image.load("resources/images/game1/pixel_laser_red.png")
+greenlzr = pygame.image.load("resources/images/game1/pixel_laser_green.png")
+bluelzr = pygame.image.load("resources/images/game1/pixel_laser_blue.png")
+yellowlzr = pygame.image.load("resources/images/game1/pixel_laser_yellow.png")
+background = pygame.transform.scale(pygame.image.load("resources/images/game1/background-black.png"), screensizegame1)
 
 
 # colors

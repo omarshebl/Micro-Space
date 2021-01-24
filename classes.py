@@ -100,8 +100,8 @@ class Ship:
 class Player(Ship):
     def __init__(self, x, y, health=100):
         super().__init__(x, y, health)
-        self.ship_img = variables.YELLOW_SPACE_SHIP
-        self.laser_img = variables.YELLOW_LASER
+        self.ship_img = variables.mainplayerimg
+        self.laser_img = variables.yellowlzr
         self.mask = pygame.mask.from_surface(self.ship_img)
         self.max_health = health
 
@@ -130,9 +130,9 @@ class Player(Ship):
 
 class Enemy(Ship):
     COLOR_MAP = {
-                "red": (variables.RED_SPACE_SHIP, variables.RED_LASER),
-                "green": (variables.GREEN_SPACE_SHIP, variables.GREEN_LASER),
-                "blue": (variables.BLUE_SPACE_SHIP, variables.BLUE_LASER)
+                "red": (variables.alien, variables.redlzr),
+                "green": (variables.alien1, variables.greenlzr),
+                "blue": (variables.alien2, variables.bluelzr)
                 }
 
     def __init__(self, x, y, color, health=100):

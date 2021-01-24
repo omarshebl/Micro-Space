@@ -28,7 +28,7 @@ def game1(WIN, username):
     player = Player(300,300)
 
     def redrawwindow():
-        WIN.blit(variables.BG, (0,0))
+        WIN.blit(variables.background, (0,0))
         username_label = variables.mainfont.render(username, 1, variables.WHITE) #TODO change coloring here and below
         levels_label = variables.mainfont.render(f"Level: {level}", 1, variables.WHITE)
         lives_label = variables.mainfont.render(f"Lives: {lives}", 1, variables.WHITE)
