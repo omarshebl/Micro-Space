@@ -33,9 +33,9 @@ def game1(WIN, username):
         levels_label = variables.mainfont.render(f"Level: {level}", 1, variables.WHITE)
         lives_label = variables.mainfont.render(f"Lives: {lives}", 1, variables.WHITE)
         player.draw(WIN)
-        WIN.blit(username_label, (610,20))
-        WIN.blit(lives_label, (610,40))
-        WIN.blit(levels_label, (610, 60))
+        WIN.blit(username_label, (810,20))
+        WIN.blit(lives_label, (810,60))
+        WIN.blit(levels_label, (810, 100))
         pygame.display.update()
 
     while not exiting:

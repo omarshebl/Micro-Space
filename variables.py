@@ -13,8 +13,8 @@ titlelogo = pygame.image.load("resources/images/titlelogo.png")
 startscreen = pygame.image.load("resources/images/startscreen.png")
 
 # screen variables
-X = 800  # Screen width
-Y = 600  # Screen height
+X = 1000  # Screen width
+Y = 800  # Screen height
 screensize = (X,Y)
 screenstartuppoint = (X/2-128,Y/2-128)
 usernamepoint = (X/2-110,Y/2-100)
@@ -38,9 +38,9 @@ buttonF = pygame.font.Font('resources/fonts/GOTHICB.ttf', 20)
 
 
 #game1 settings
-mainfont = pygame.font.SysFont("comicsans", 30)
-Xgame1 = 600
-Ygame1 = 600
+mainfont = pygame.font.Font('resources/fonts/GOTHIC.ttf', 25)
+Xgame1 = 800
+Ygame1 = 800
 screensizegame1 = (Xgame1,Ygame1)
 RED_SPACE_SHIP = pygame.image.load("resources/images/game1/pixel_ship_red_small.png")
 GREEN_SPACE_SHIP = pygame.image.load("resources/images/game1/pixel_ship_green_small.png")
