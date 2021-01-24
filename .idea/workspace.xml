@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93dd1738-8d51-4459-9a39-5e0edaf72d56" name="Default Changelist" comment="" />
-    <ignored path="$PROJECT_DIR$/macvenv/" />
-    <ignored path="$PROJECT_DIR$/venv/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="93dd1738-8d51-4459-9a39-5e0edaf72d56" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/game1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Space Shooter Tutorial/assets/background-black.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/game1/background-black.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Space Shooter Tutorial/assets/pixel_laser_blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/game1/pixel_laser_blue.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Space Shooter Tutorial/assets/pixel_laser_green.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/game1/pixel_laser_green.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Space Shooter Tutorial/assets/pixel_laser_red.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/game1/pixel_laser_red.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Space Shooter Tutorial/assets/pixel_laser_yellow.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/game1/pixel_laser_yellow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Space Shooter Tutorial/assets/pixel_ship_blue_small.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/game1/pixel_ship_blue_small.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Space Shooter Tutorial/assets/pixel_ship_green_small.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/game1/pixel_ship_green_small.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Space Shooter Tutorial/assets/pixel_ship_red_small.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/game1/pixel_ship_red_small.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Space Shooter Tutorial/assets/pixel_ship_yellow.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/game1/pixel_ship_yellow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Space Shooter Tutorial/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Space Shooter Tutorial/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/variables.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -35,34 +33,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="784" />
-    <option name="y" value="1" />
-    <option name="width" value="1144" />
-    <option name="height" value="1008" />
-  </component>
   <component name="ProjectId" id="1nRiQ0Hsomkv9PKBNhAcTKdPgNO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Microprocessors Bonus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Microprocessors Bonus" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -79,30 +52,19 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/images/game1" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.mac">
+    <configuration name="mac" type="PythonConfigurationType" factoryName="Python">
       <module name="Microprocessors Bonus" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\omarm\Desktop\Microprocessors Bonus\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/macvenv/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -117,6 +79,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Microprocessors Bonus" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/macvenv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.mac" />
+      <item itemvalue="Python.main" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
@@ -138,46 +126,18 @@
       <workItem from="1611359294813" duration="601000" />
       <workItem from="1611359980810" duration="653000" />
       <workItem from="1611479672637" duration="27000" />
+      <workItem from="1611479874634" duration="4532000" />
     </task>
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12153518" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="SciView" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="304" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611360432462">
+    <state x="304" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611481514856">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="304" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1611360432462" />
+    <state x="304" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1611481514856" />
     <state x="0" y="0" key="EnvironmentVariablesDialog" timestamp="1611360190203">
       <screen x="0" y="25" width="1680" height="1025" />
     </state>
@@ -186,40 +146,30 @@
       <screen x="0" y="25" width="1680" height="1025" />
     </state>
     <state x="0" y="0" width="1680" height="1050" key="FileChooserDialogImpl/0.0.1680.1050@0.0.1680.1050" timestamp="1611359784975" />
-    <state width="1638" height="155" key="GridCell.Tab.0.bottom" timestamp="1611428095867">
+    <state width="1638" height="155" key="GridCell.Tab.0.bottom" timestamp="1611484329832">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="155" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1611428095867" />
-    <state width="1638" height="155" key="GridCell.Tab.0.center" timestamp="1611428095865">
+    <state width="1638" height="155" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1611484329832" />
+    <state width="1638" height="155" key="GridCell.Tab.0.center" timestamp="1611484329830">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="155" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1611428095865" />
-    <state width="1638" height="155" key="GridCell.Tab.0.left" timestamp="1611428095864">
+    <state width="1638" height="155" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1611484329830" />
+    <state width="1638" height="155" key="GridCell.Tab.0.left" timestamp="1611484329830">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="155" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1611428095864" />
-    <state width="1638" height="155" key="GridCell.Tab.0.right" timestamp="1611428095866">
+    <state width="1638" height="155" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1611484329830" />
+    <state width="1638" height="155" key="GridCell.Tab.0.right" timestamp="1611484329831">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="155" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1611428095866" />
-    <state x="349" y="161" key="SettingsEditor" timestamp="1611360659526">
+    <state width="1638" height="155" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1611484329831" />
+    <state x="349" y="161" key="SettingsEditor" timestamp="1611481409739">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="349" y="161" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1611360659526" />
+    <state x="349" y="161" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1611481409739" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Micro_Space$mac.coverage" NAME="mac Coverage Results" MODIFIED="1611484329796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Micro_Space$main.coverage" NAME="main Coverage Results" MODIFIED="1611428095854" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Microprocessors_Bonus$main.coverage" NAME="main Coverage Results" MODIFIED="1611479692661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>

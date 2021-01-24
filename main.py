@@ -1,7 +1,10 @@
 import pygame
 import time
+import os
+import random
 import variables # game variables file "variables.py"
 from classes import button
+from game1 import game1
 
 username = "omar"
 
@@ -32,6 +35,8 @@ def checkexiting():
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             exiting = True
+            return True
+    return False
 
 def screenstartup():
     global startup
@@ -66,8 +71,6 @@ def getusername():
             screenupdate()
             startup=False
         for event in pygame.event.get():
-            screenupdate(variables.BLACK)
-            gamescreen.blit(variables.getusernametext, variables.screenstartuppoint)
             if event.type == pygame.KEYDOWN:
                 if event.key==pygame.K_BACKSPACE:
                     if len(username)>0:
@@ -83,11 +86,13 @@ def getusername():
                 elif event.key:
                     if (not len(username) > 15) and event.unicode :
                         username += event.unicode
-            usernametext = variables.introfont.render(username, False, variables.PURPLE)
-            gamescreen.blit(usernametext, variables.usernamepoint)
-            screenupdate()
+                screenupdate(variables.BLACK)
+                gamescreen.blit(variables.getusernametext, variables.screenstartuppoint)
+                usernametext = variables.introfont.render(username, True, variables.PURPLE)
+                gamescreen.blit(usernametext, variables.usernamepoint)
+                screenupdate()
 
-    screenupdate(variables.BLACK)
+screenupdate(variables.BLACK)
 
 def drawbuttons():
     menuB1.draw(gamescreen, variables.WHITE)
@@ -119,4 +124,5 @@ while not exiting:
     checkexiting()
     #screenstartup()
     #getusername()
-    mainmenu()
+    #mainmenu()
+    game1(gamescreen,username)
