@@ -77,7 +77,7 @@ class Ship:
             if laser.off_screen(variables.Ygame1):
                 self.lasers.remove(laser)
             elif laser.collision(obj):
-                if obj.get_armor:
+                if obj.get_armor():
                     obj.set_armor(False)
                 else:
                     obj.health -= 10

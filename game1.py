@@ -13,7 +13,7 @@ pygame.font.init()
 clock = pygame.time.Clock()
 
 lost = False
-pause = False
+pausegame = False
 exiting = False
 FPS = variables.FPS
 level = variables.level
@@ -33,6 +33,7 @@ smrtmissilepwrup = True
 nukepwrup = True
 revivepwrup = True
 autopwrup = False
+keys = []
 
 player = Player(400, 600)
 enemies = []
@@ -42,20 +43,27 @@ def checkexiting():
         if event.type == pygame.QUIT:
             quit()
 
-def checkpause(WIN, username):
-    global pause
+def togglepause():
+    global pausegame
+    if pausegame is True:
+        pausegame = False
+    else:
+        pausegame = True
+
+def checkpause():
+    global keys
     keys = pygame.key.get_pressed()
     if keys[pygame.K_ESCAPE]:
-        pause = True
-    while pause:
-        clock.tick(FPS)
-        redrawgame(WIN, username)
-        pygame.time.delay(2000)
-        keyso = pygame.key.get_pressed()
-        if keyso[pygame.K_ESCAPE]:
-            pause = False
-        else:
-            pause = True
+        togglepause()
+        keys=[]
+
+def wait():
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                quit()
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+                return
 
 def checkmovement():
     global player, playervelocity, armorpwrup, healthpwrup, smrtmissilepwrup, nukepwrup, revivepwrup, autopwrup, enemies, lives
@@ -130,6 +138,20 @@ def newenemywave():
             enemy = Enemy(random.randrange(50, variables.Xgame1 - 300), random.randrange(0, 250), random.randint(0, 2))
             enemies.append(enemy)
 
+def enemykilled(enemy, add=False):
+    global alienkilled, alienkilled1, alienkilled2
+    if not add:
+        enemies.remove(enemy)
+    else:
+        var = enemy.get_var()
+        if var == 0:
+            alienkilled += 1
+        elif var == 1:
+            alienkilled1 += 1
+        elif var == 2:
+            alienkilled2 += 1
+        enemies.remove(enemy)
+
 def checkloss():
     global lost, exiting
     if lives <= 0 or player.health <= 0:
@@ -198,22 +220,8 @@ def redrawsidebar(WIN, username):
     redrawpwrups(WIN)
     redrawkilled(WIN)
 
-def enemykilled(enemy, add=False):
-    global alienkilled, alienkilled1, alienkilled2
-    if not add:
-        enemies.remove(enemy)
-    else:
-        var = enemy.get_var()
-        if var == 0:
-            alienkilled += 1
-        elif var == 1:
-            alienkilled1 += 1
-        elif var == 2:
-            alienkilled2 += 1
-        enemies.remove(enemy)
-
 def redrawgame(WIN, username):
-    global player, lost, enemies, pause
+    global player, lost, enemies, pausegame
     WIN.fill(variables.BLACK)
     WIN.blit(variables.background, (0, 0))
     redrawsidebar(WIN, username)
@@ -223,22 +231,28 @@ def redrawgame(WIN, username):
     if lost is True:
         lost_label = variables.mainfont.render("You Lost!!", 1, (255, 255, 255))
         WIN.blit(lost_label, (variables.Xgame1 / 2 - lost_label.get_width() / 2, 400))
-    if pause is True:
+    if pausegame is True:
         pause_label = variables.mainfont.render("Game Paused!", 1, (255, 255, 255))
         WIN.blit(pause_label, (variables.Xgame1 / 2 - pause_label.get_width() / 2, 400))
     pygame.display.update()
 
 def game1(WIN, username):
+    global pausegame
     while not exiting:
         clock.tick(FPS)
+        checkpause()
         checkexiting()
-        checkpause(WIN, username)
-        checkloss()
-        redrawgame(WIN, username)
-        lostgame(username)
-        newenemywave()
-        checkmovement()
-        generalmovement()
+        if pausegame:
+            redrawgame(WIN, username)
+            wait()
+            togglepause()
+        else:
+            checkloss()
+            redrawgame(WIN, username)
+            lostgame(username)
+            newenemywave()
+            checkmovement()
+            generalmovement()
 
 
 
