@@ -3,6 +3,7 @@ import time
 import os
 import random
 import variables # game variables file "variables.py"
+from variables import collide
 from classes import Player
 from classes import Enemy
 from classes import Laser
@@ -13,8 +14,7 @@ pygame.font.init()
 def checkexiting():
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            return True
-    return False
+            quit()
 
 def game1(WIN, username):
     exiting = False
@@ -23,6 +23,7 @@ def game1(WIN, username):
     level = 0
     lives = 5
     playervelocity = 5
+    laservelocity = 4
     enemyvelocity = 1
     enemies = []
     wavelength = 5
@@ -67,14 +68,14 @@ def game1(WIN, username):
             else:
                 continue
 
-
         if len(enemies) == 0:
             level +=1
             wavelength +=1
             for i in range(wavelength):
                 enemy = Enemy(random.randrange(50, variables.Xgame1-300), random.randrange(0, 250), random.randint(0,2))
                 enemies.append(enemy)
-        exiting = checkexiting()
+
+        checkexiting()
         keys = pygame.key.get_pressed()
         if keys[pygame.K_LEFT] and player.x - playervelocity > 0:  # left
             player.x -= playervelocity
@@ -84,12 +85,23 @@ def game1(WIN, username):
             player.y -= playervelocity
         if keys[pygame.K_DOWN] and player.y + playervelocity + player.get_height() + 20 < variables.Ygame1:  # down
             player.y += playervelocity
+        if keys[pygame.K_SPACE]:
+            player.shoot()
+
 
         for enemym in enemies[:]:
             enemym.move(enemyvelocity)
+            enemym.move_lasers(laservelocity, player)
+            if random.randrange(0,10*FPS) == 1:
+                enemym.shoot()
+            if collide(enemym, player):
+                player.health -= 10
+                enemies.remove(enemym)
             if enemym.y + enemym.get_height() > variables.Ygame1:
                 lives -= 1
                 enemies.remove(enemym)
+        player.move_lasers(-laservelocity, enemies)
+
 
 
 

@@ -46,10 +46,8 @@ alien = pygame.image.load("resources/images/game1/alien.png")
 alien1 = pygame.image.load("resources/images/game1/alien1.png")
 alien2 = pygame.image.load("resources/images/game1/alien2.png")
 mainplayerimg = pygame.image.load("resources/images/game1/space-invaders.png")
-redlzr = pygame.image.load("resources/images/game1/pixel_laser_red.png")
-greenlzr = pygame.image.load("resources/images/game1/pixel_laser_green.png")
-bluelzr = pygame.image.load("resources/images/game1/pixel_laser_blue.png")
-yellowlzr = pygame.image.load("resources/images/game1/pixel_laser_yellow.png")
+missile = pygame.image.load("resources/images/game1/missile.png")
+bomb = pygame.image.load("resources/images/game1/bomb.png")
 background = pygame.transform.scale(pygame.image.load("resources/images/game1/background-black.png"), screensizegame1)
 
 

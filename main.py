@@ -3,7 +3,7 @@ import time
 import os
 import random
 import variables # game variables file "variables.py"
-from classes import button
+from classes import Button
 from game1 import game1
 
 username = "omar"
@@ -26,9 +26,9 @@ pygame.display.set_caption("Micro Space")
 pygame.display.set_icon(variables.titlelogo)
 
 #set main menu buttons
-menuB1 = button(variables.buttonC,variables.buttonH, variables.buttonTC, variables.startposB1, variables.wh, variables.textB1)
-menuB2 = button(variables.buttonC,variables.buttonH, variables.buttonTC, variables.startposB2, variables.wh, variables.textB2)
-menuB3 = button(variables.buttonC,variables.buttonH, variables.buttonTC, variables.startposB3, variables.wh, variables.textB3)
+menuB1 = Button(variables.buttonC,variables.buttonH, variables.buttonTC, variables.startposB1, variables.wh, variables.textB1)
+menuB2 = Button(variables.buttonC,variables.buttonH, variables.buttonTC, variables.startposB2, variables.wh, variables.textB2)
+menuB3 = Button(variables.buttonC,variables.buttonH, variables.buttonTC, variables.startposB3, variables.wh, variables.textB3)
 
 def checkexiting():
     global exiting
@@ -118,4 +118,4 @@ while not exiting:
     #screenstartup()
     #getusername()
     #mainmenu()
-    #exiting = game1(gamescreen,username)
+    exiting = game1(gamescreen,username)

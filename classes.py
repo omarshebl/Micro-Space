@@ -4,7 +4,7 @@ import variables
 from variables import collide
 pygame.font.init()
 
-class button:
+class Button:
     def __init__(self, color, highcolor, textcolor, startpos, wh, text=''):
         self.highcolor = highcolor
         self.ocolor = color
@@ -102,7 +102,7 @@ class Player(Ship):
     def __init__(self, x, y, health=100):
         super().__init__(x, y, health)
         self.ship_img = variables.mainplayerimg
-        self.laser_img = variables.yellowlzr
+        self.laser_img = variables.missile
         self.mask = pygame.mask.from_surface(self.ship_img)
         self.max_health = health
 
@@ -130,12 +130,12 @@ class Player(Ship):
                                                self.ship_img.get_width() * (self.health / self.max_health), 10))
 
 class Enemy(Ship):
-    variation = ((variables.alien, variables.redlzr), (variables.alien1, variables.greenlzr),
-                (variables.alien2, variables.bluelzr))
+    variation = (variables.alien, variables.alien1, variables.alien2)
 
     def __init__(self, x, y, var, health=100):
         super().__init__(x, y, health)
-        self.ship_img, self.laser_img = self.variation[var]
+        self.laser_img = variables.bomb
+        self.ship_img = self.variation[var]
         self.mask = pygame.mask.from_surface(self.ship_img)
 
     def move(self, vel):
