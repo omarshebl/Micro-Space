@@ -52,6 +52,7 @@ trajectoryvel = 4 # speed of missiles & bombs movement
 wavelength = 5 # how many enemy spawn at every round
 #font
 mainfont = pygame.font.Font('resources/fonts/GOTHIC.ttf', 25)
+smallfont = pygame.font.Font('resources/fonts/GOTHIC.ttf', 20)
 # window size
 Xgame1 = 800
 Ygame1 = 800
@@ -60,9 +61,19 @@ screensizegame1 = (Xgame1,Ygame1)
 alien = pygame.image.load("resources/images/game1/alien.png")
 alien1 = pygame.image.load("resources/images/game1/alien1.png")
 alien2 = pygame.image.load("resources/images/game1/alien2.png")
+alien32 = pygame.image.load("resources/images/game1/alien32.png")
+alien132 = pygame.image.load("resources/images/game1/alien132.png")
+alien232 = pygame.image.load("resources/images/game1/alien232.png")
 mainplayerimg = pygame.image.load("resources/images/game1/space-invaders.png")
 missile = pygame.image.load("resources/images/game1/missile.png")
 bomb = pygame.image.load("resources/images/game1/bomb.png")
+armor = pygame.image.load("resources/images/game1/armor.png")
+health = pygame.image.load("resources/images/game1/health.png")
+smrtmissile = pygame.image.load("resources/images/game1/smrtmissile.png")
+nuke = pygame.image.load("resources/images/game1/nuclear-explosion.png")
+auto = pygame.image.load("resources/images/game1/automatic-flash.png")
+revive = pygame.image.load("resources/images/game1/revive.png")
+
 background = pygame.transform.scale(pygame.image.load("resources/images/game1/background-black.png"), screensizegame1)
 
 ##############################################################################################################

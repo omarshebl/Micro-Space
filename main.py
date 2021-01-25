@@ -36,9 +36,7 @@ def checkexiting():
     global exiting
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            exiting = True
-            return True
-    return False
+            quit()
 
 def screenstartup():
     global startup

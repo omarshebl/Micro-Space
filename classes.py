@@ -77,7 +77,10 @@ class Ship:
             if laser.off_screen(variables.Ygame1):
                 self.lasers.remove(laser)
             elif laser.collision(obj):
-                obj.health -= 10
+                if obj.get_armor:
+                    obj.set_armor(False)
+                else:
+                    obj.health -= 10
                 self.lasers.remove(laser)
 
     def cooldown(self):
@@ -105,6 +108,7 @@ class Player(Ship):
         self.laser_img = variables.missile
         self.mask = pygame.mask.from_surface(self.ship_img)
         self.max_health = health
+        self.armor = False
 
     def move_lasers(self, vel, objs):
         self.cooldown()
@@ -118,10 +122,16 @@ class Player(Ship):
                         objs.remove(obj)
                         if laser in self.lasers:
                             self.lasers.remove(laser)
+                        return obj.get_var()
 
     def draw(self, window):
+        self.drawarmor(window)
         super().draw(window)
         self.healthbar(window)
+
+    def drawarmor(self, window):
+        if self.armor:
+            pygame.draw.circle(window, (192, 254, 255), (self.x+self.ship_img.get_width()/2,self.y+self.ship_img.get_height()/2), self.ship_img.get_width()+5)
 
     def healthbar(self, window):
         pygame.draw.rect(window, (255, 0, 0),
@@ -129,12 +139,19 @@ class Player(Ship):
         pygame.draw.rect(window, (0, 255, 0), (self.x, self.y + self.ship_img.get_height() + 10,
                                                self.ship_img.get_width() * (self.health / self.max_health), 10))
 
+    def get_armor(self):
+        return self.armor
+
+    def set_armor(self, state):
+        self.armor = state
+
 class Enemy(Ship):
     variation = (variables.alien, variables.alien1, variables.alien2)
 
     def __init__(self, x, y, var, health=100):
         super().__init__(x, y, health)
         self.laser_img = variables.bomb
+        self.var = var
         self.ship_img = self.variation[var]
         self.mask = pygame.mask.from_surface(self.ship_img)
 
@@ -151,5 +168,8 @@ class Enemy(Ship):
             laser = Laser(self.x-20, self.y, self.laser_img)
             self.lasers.append(laser)
             self.cool_down_counter = 1
+
+    def get_var(self):
+        return self.var
 
 
