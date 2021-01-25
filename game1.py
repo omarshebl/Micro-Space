@@ -13,6 +13,7 @@ pygame.font.init()
 clock = pygame.time.Clock()
 
 lost = False
+pause = False
 exiting = False
 FPS = variables.FPS
 level = variables.level
@@ -40,6 +41,21 @@ def checkexiting():
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             quit()
+
+def checkpause(WIN, username):
+    global pause
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_ESCAPE]:
+        pause = True
+    while pause:
+        clock.tick(FPS)
+        redrawgame(WIN, username)
+        pygame.time.delay(2000)
+        keyso = pygame.key.get_pressed()
+        if keyso[pygame.K_ESCAPE]:
+            pause = False
+        else:
+            pause = True
 
 def checkmovement():
     global player, playervelocity, armorpwrup, healthpwrup, smrtmissilepwrup, nukepwrup, revivepwrup, autopwrup, enemies, lives
@@ -197,9 +213,7 @@ def enemykilled(enemy, add=False):
         enemies.remove(enemy)
 
 def redrawgame(WIN, username):
-    global player
-    global enemies
-    global lost
+    global player, lost, enemies, pause
     WIN.fill(variables.BLACK)
     WIN.blit(variables.background, (0, 0))
     redrawsidebar(WIN, username)
@@ -209,12 +223,16 @@ def redrawgame(WIN, username):
     if lost is True:
         lost_label = variables.mainfont.render("You Lost!!", 1, (255, 255, 255))
         WIN.blit(lost_label, (variables.Xgame1 / 2 - lost_label.get_width() / 2, 400))
+    if pause is True:
+        pause_label = variables.mainfont.render("Game Paused!", 1, (255, 255, 255))
+        WIN.blit(pause_label, (variables.Xgame1 / 2 - pause_label.get_width() / 2, 400))
     pygame.display.update()
 
 def game1(WIN, username):
     while not exiting:
         clock.tick(FPS)
         checkexiting()
+        checkpause(WIN, username)
         checkloss()
         redrawgame(WIN, username)
         lostgame(username)
