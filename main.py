@@ -62,14 +62,10 @@ def getusername():
     global username
     screenupdate(variables.BLACK)
     exitinguser = False
-    startup = True
+    gamescreen.blit(variables.getusernametext,((variables.X / 2 - variables.getusernametext.get_width() / 2), (variables.Y / 2 - 50)))
+    screenupdate()
     while not exitinguser:
         checkexiting()
-        if startup:
-            screenupdate(variables.BLACK)
-            gamescreen.blit(variables.getusernametext, variables.screenstartuppoint)
-            screenupdate()
-            startup=False
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
                 if event.key==pygame.K_BACKSPACE:
@@ -83,16 +79,13 @@ def getusername():
                     global exiting
                     exiting = True
                     break
-                elif event.key:
-                    if (not len(username) > 15) and event.unicode :
-                        username += event.unicode
-                screenupdate(variables.BLACK)
-                gamescreen.blit(variables.getusernametext, variables.screenstartuppoint)
-                usernametext = variables.introfont.render(username, True, variables.PURPLE)
-                gamescreen.blit(usernametext, variables.usernamepoint)
-                screenupdate()
-
-screenupdate(variables.BLACK)
+                elif (not len(username) > 15) and event.unicode:
+                    username += event.unicode
+            gamescreen.fill(variables.BLACK)
+            gamescreen.blit(variables.getusernametext, ((variables.X / 2 - variables.getusernametext.get_width() / 2), (variables.Y / 2 - 50)))
+            usernametext = variables.introfont.render(username, True, variables.PURPLE)
+            gamescreen.blit(usernametext, ((variables.X / 2 - usernametext.get_width() / 2), (variables.Y / 2)))
+            screenupdate()
 
 def drawbuttons():
     menuB1.draw(gamescreen, variables.WHITE)
@@ -125,4 +118,4 @@ while not exiting:
     #screenstartup()
     #getusername()
     #mainmenu()
-    game1(gamescreen,username)
+    #exiting = game1(gamescreen,username)

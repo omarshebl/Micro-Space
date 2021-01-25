@@ -1,5 +1,4 @@
 This game is entirely my design & concept
 I programmed every single line of code in the game, except of course
 the pygame Library which is mainly the GUI library for outputting to a screen
-
-The Picture for the game I mostly got from flaticon.com
+The Pictures for the game I mostly got from flaticon.com

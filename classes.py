@@ -1,4 +1,5 @@
 import pygame
+import random
 import variables
 from variables import collide
 pygame.font.init()
@@ -129,19 +130,21 @@ class Player(Ship):
                                                self.ship_img.get_width() * (self.health / self.max_health), 10))
 
 class Enemy(Ship):
-    COLOR_MAP = {
-                "red": (variables.alien, variables.redlzr),
-                "green": (variables.alien1, variables.greenlzr),
-                "blue": (variables.alien2, variables.bluelzr)
-                }
+    variation = ((variables.alien, variables.redlzr), (variables.alien1, variables.greenlzr),
+                (variables.alien2, variables.bluelzr))
 
-    def __init__(self, x, y, color, health=100):
+    def __init__(self, x, y, var, health=100):
         super().__init__(x, y, health)
-        self.ship_img, self.laser_img = self.COLOR_MAP[color]
+        self.ship_img, self.laser_img = self.variation[var]
         self.mask = pygame.mask.from_surface(self.ship_img)
 
     def move(self, vel):
         self.y += vel
+        rando = random.randint(-1,1)
+        if rando == -1:
+            self.x -= vel*random.randint(1,3)
+        elif rando == 1:
+            self.x += vel*random.randint(1,3)
 
     def shoot(self):
         if self.cool_down_counter == 0:
