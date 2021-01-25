@@ -1,4 +1,10 @@
-#TODO explains games here
+start screen:
+    this is a startup for the game you have to wait until it finishes loading :)
+
+getting the user name:
+    this is the part where the user enters his name and he cannot continue with an empty name
+    he also can quit the game wih the key escape
+
 
 main menu:
     use the mouse to navigate and click on the button to activate

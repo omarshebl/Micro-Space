@@ -1,1 +1,8 @@
-#TODO install guide here
+To ease the burden on you doctor I used pyinstaller to create a one file executable you will
+find it the the folder "game" a file called "main.exe"
+
+if you wish to run the source code you need to have >python 3.7 and install pygame using pip installer first using:
+pip install pygame
+
+then you can call the game from the source folder a file called "main.py" using
+python main.py

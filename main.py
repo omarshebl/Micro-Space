@@ -1,14 +1,11 @@
 import pygame
 import time
-import os
-import random
 import variables # game variables file "variables.py"
 from classes import Button
 from game1 import game1
-from highscores import writescore
 from highscores import readscores
 
-username = "omar"
+username = ""
 
 # exit variable
 exiting = False
@@ -120,6 +117,7 @@ def printscore():
                     screenupdate(variables.BLACK)
 
 def drawmainmenu():
+    gamescreen.fill(variables.BLACK)
     menuB1.draw(gamescreen, variables.WHITE)
     menuB2.draw(gamescreen, variables.WHITE)
     menuB3.draw(gamescreen, variables.WHITE)
@@ -145,10 +143,9 @@ def mainmenu():
                     pygame.quit()
 
 # ---------------------- main loop -----------------------
-#while not exiting:
-    #checkexiting()
+while not exiting:
+    checkexiting()
     #screenstartup()
-    #getusername()
-    #mainmenu()
-game1(gamescreen, username)
+    getusername()
+    mainmenu()
 

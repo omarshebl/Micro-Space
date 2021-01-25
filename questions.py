@@ -7,12 +7,23 @@ clock = pygame.time.Clock()
 FPS = variables.FPS
 
 simplequestions = [["What interrupt do we use for outputting text ?", "21h"],
-             ["What interrupt do we use for inputting text ?", "16h"],
-             ["What value for AH in INT10 to change video mode ?", "0"],
-             ["What value for AX to get mouse position in INT33 ?","3"]] #TODO add more questions
+                ["What interrupt do we use for inputting text ?", "16h"],
+                ["What value for AH in INT10 to change video mode ?", "0"],
+                ["What value for AX to get mouse position in INT33 ?","3"],
+                ["Virtual memory must be built outside the processor chip ? T or F","T"],
+                ["Virtual memory must be built outside the processor chip ? T or F","T"],
+                ["What to use to search for a certain character in a string ?","SCASB"],
+                ["What to write to define four byte variables name (B) init with 3 ?","B DD 3"],
+                ["Is this command illegal (B DB 2345h) ? T or F","T"]]
 
-hardquestions = [["MOV BX,25h\nMOV AX,36h\nADD AX,BX\nAX=?","5Bh"]
-                 ]
+hardquestions = [["MOV BX,25h\nMOV AX,36h\nADD AX,BX\nAX=? in Hex","5Bh"],
+                 ["USING ONE LINE\nreverse the first nibble of CH, write in Hex","XOR CH, 0Fh"],
+                 ["MOV AL,0000001b\nMOV BL,10000000\nMUL BL\nAX=? in Hex","0180h"],
+                 ["MOV AL,0000001b\nMOV BL,10000000\nIMUL BL\nAX=? in Hex","FE80h"],
+                 ["10101101b\nAs an unsigned number ? in Dec","173d"],
+                 ["10101101b\nAs a signed number ? in Dec","-83d"],
+                 ["USING ONE LINE\ndivide the content of AX, write in Hex","SHR AX,4h"],
+                 ["IDENTIFY THE OPERAND ADDRESSING MODE\nADD DX,15","IMMEDIATE"]]
 
 def makequestion(typeqeus):
     if typeqeus == 1:
@@ -34,8 +45,6 @@ def drawpwrp(WIN, multiplier, pwrup):
         WIN.blit(variables.health128, (variables.Xq/2 - variables.health128.get_width() / 2, 50))
     if pwrup == "auto":
         WIN.blit(variables.auto128, (variables.Xq/2 - variables.auto128.get_width() / 2, 50))
-    if pwrup == "smrtmissile":
-        WIN.blit(variables.smrtmissile128, (variables.Xq/2 - variables.smrtmissile128.get_width() / 2, 50))
     if pwrup == "multiplier":
         multiplier_label = variables.mainfont.render(f"For Multiplier: {multiplier}x", 1, variables.RED)
         WIN.blit(variables.multiplier128, (variables.Xq/2 - variables.multiplier128.get_width() / 2, 70))

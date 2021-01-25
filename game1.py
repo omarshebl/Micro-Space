@@ -1,6 +1,4 @@
 import pygame
-import time
-import os
 import random
 import variables # game variables file "variables.py"
 from variables import collide
@@ -14,7 +12,7 @@ pygame.font.init()
 clock = pygame.time.Clock()
 
 
-pwrups = ["armor", "health", "smrtmissile", "nuke", "revive", "auto", "multiplier"]
+pwrups = ["armor", "health", "nuke", "revive", "auto", "multiplier"]
 
 lost = False
 pausegame = False
@@ -40,7 +38,6 @@ alienkilled1 = 0
 alienkilled2 = 0
 armorpwrup = False
 healthpwrup = False
-smrtmissilepwrup = False
 nukepwrup = False
 revivepwrup = False
 autopwrup = False
@@ -57,7 +54,7 @@ player = Player(400, 600)
 enemies = []
 
 def setpwrup(state, which):
-    global armorpwrup, healthpwrup, smrtmissilepwrup, nukepwrup, revivepwrup, autopwrup, usemultiplier
+    global armorpwrup, healthpwrup, nukepwrup, revivepwrup, autopwrup, usemultiplier
     if state:
         if which == "nuke":
             nukepwrup = True
@@ -69,8 +66,6 @@ def setpwrup(state, which):
             healthpwrup = True
         if which == "auto":
             autopwrup = True
-        if which == "smrtmissile":
-            smrtmissilepwrup = True
         if which == "multiplier":
             usemultiplier = True
 
@@ -93,9 +88,9 @@ def checkmultipwrup():
 
 def questionanswer(WIN):
     global question, questionType, useauto, simplea, simplef, harda, hardf
-    rando = 6
+    rando = 5
     if questionType != 1:
-        rando = random.randint(0,5)
+        rando = random.randint(0,4)
     randompwrup = pwrups[rando]
     question = askquestion(WIN, questionType, multiplier, useauto, randompwrup)
     setpwrup(question, randompwrup)
@@ -146,7 +141,7 @@ def wait():
                     return
 
 def checkmovement():
-    global player, playervelocity, armorpwrup, healthpwrup, smrtmissilepwrup, nukepwrup, revivepwrup, autopwrup, enemies, lives, useauto
+    global player, playervelocity, armorpwrup, healthpwrup, nukepwrup, revivepwrup, autopwrup, enemies, lives, useauto
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT] and player.x - playervelocity > 0:  # left
         player.x -= playervelocity
@@ -166,10 +161,6 @@ def checkmovement():
         if healthpwrup:
             player.health = 100
         healthpwrup = False
-    if keys[pygame.K_v]:
-        if smrtmissilepwrup:
-            pass #TODO smrtmissilecode
-        smrtmissilepwrup = False
     if keys[pygame.K_n]:
         if nukepwrup:
             enemies = []
@@ -298,10 +289,6 @@ def redrawpwrups(WIN):
         variables.health.set_alpha(255)
     else:
         variables.health.set_alpha(80)
-    if smrtmissilepwrup:
-        variables.smrtmissile.set_alpha(255)
-    else:
-        variables.smrtmissile.set_alpha(80)
     if autopwrup:
         variables.auto.set_alpha(255)
     else:
@@ -320,11 +307,10 @@ def redrawpwrups(WIN):
         variables.multiplier.set_alpha(80)
     WIN.blit(variables.armor, ((800 + 200 / 3) - variables.armor.get_width() / 2 - 66.7 / 2, variables.Y - 150))
     WIN.blit(variables.health, ((800 + 400 / 3) - variables.health.get_width() / 2 - 66.7 / 2, variables.Y - 150))
-    WIN.blit(variables.smrtmissile, ((800 + 600 / 3) - variables.smrtmissile.get_width() / 2 - 70 / 2, variables.Y - 150))
+    WIN.blit(variables.multiplier, ((800 + 600 / 3) - variables.multiplier.get_width() / 2 - 66.7 / 2, variables.Y - 150))
     WIN.blit(variables.nuke, ((800 + 200 / 3) - variables.nuke.get_width() / 2 - 66.7 / 2, variables.Y - 200))
     WIN.blit(variables.revive, ((800 + 400 / 3) - variables.revive.get_width() / 2 - 66.7 / 2, variables.Y - 200))
     WIN.blit(variables.auto,((800 + 600 / 3) - variables.auto.get_width() / 2 - 70 / 2, variables.Y - 200))
-    WIN.blit(variables.multiplier, ((800 + 400 / 3) - variables.multiplier.get_width() / 2 - 66.7 / 2, variables.Y - 250))
 
 def redrawkilled(WIN):
     alienkilled_text = variables.smallfont.render(f"{alienkilled}", 1, variables.WHITE)
