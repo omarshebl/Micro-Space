@@ -61,32 +61,32 @@ def screenupdate(color=None):
 def getusername():
     global username
     screenupdate(variables.BLACK)
-    exitinguser = False
     gamescreen.blit(variables.getusernametext,((variables.X / 2 - variables.getusernametext.get_width() / 2), (variables.Y / 2 - 50)))
     screenupdate()
-    while not exitinguser:
-        checkexiting()
+    while True:
         for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                quit()
             if event.type == pygame.KEYDOWN:
                 if event.key==pygame.K_BACKSPACE:
                     if len(username)>0:
                         username = username[:-1]
                 elif event.key==pygame.K_RETURN:
-                    exitinguser = True
+                    if len(username)>0:
+                        return
                 elif event.key==pygame.K_ESCAPE:
-                    exitinguser = True
                     username=""
                     global exiting
                     exiting = True
-                    break
-                elif (not len(username) > 15) and event.unicode:
-                    username += event.unicode
-                gamescreen.fill(variables.BLACK)
-                gamescreen.blit(variables.getusernametext, ((variables.X / 2 - variables.getusernametext.get_width() / 2), (variables.Y / 2 - 50)))
-                usernametext = variables.introfont.render(username, True, variables.PURPLE)
-                gamescreen.blit(usernametext, ((variables.X / 2 - usernametext.get_width() / 2), (variables.Y / 2)))
-                screenupdate()
-    screenupdate(variables.BLACK)
+                    return
+                else:
+                    if not len(username) > 15:
+                        username += event.unicode
+        gamescreen.fill(variables.BLACK)
+        gamescreen.blit(variables.getusernametext, ((variables.X / 2 - variables.getusernametext.get_width() / 2), (variables.Y / 2 - 50)))
+        usernametext = variables.introfont.render(username, True, variables.PURPLE)
+        gamescreen.blit(usernametext, ((variables.X / 2 - usernametext.get_width() / 2), (variables.Y / 2)))
+        screenupdate()
 
 def printscore():
     scores = readscores()
@@ -118,8 +118,6 @@ def printscore():
                 if keys[pygame.K_ESCAPE]:
                     exitscores = True
                     screenupdate(variables.BLACK)
-
-
 
 def drawmainmenu():
     menuB1.draw(gamescreen, variables.WHITE)

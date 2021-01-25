@@ -24,7 +24,7 @@ class Button:
 
         if self.text != '':
             font = variables.buttonF
-            text = font.render(self.text, True, self.textcolor) #TODO change button text color
+            text = font.render(self.text, True, self.textcolor)
             win.blit(text, (self.x + (self.width / 2 - text.get_width() / 2), self.y + (self.height / 2 - text.get_height() / 2)))
 
     def isOver(self, pos):
@@ -34,7 +34,7 @@ class Button:
         self.color = self.ocolor
         return False
 
-class Laser:
+class Projectile:
     def __init__(self, x, y, img):
         self.x = x
         self.y = y
@@ -61,27 +61,27 @@ class Ship:
         self.y = y
         self.health = health
         self.ship_img = None
-        self.laser_img = None
-        self.lasers = []
+        self.projectile_img = None
+        self.projectiles = []
         self.cool_down_counter = 0
 
     def draw(self, window):
         window.blit(self.ship_img, (self.x, self.y))
-        for laser in self.lasers:
-            laser.draw(window)
+        for projectile in self.projectiles:
+            projectile.draw(window)
 
-    def move_lasers(self, vel, obj):
+    def move_projectiles(self, vel, obj):
         self.cooldown()
-        for laser in self.lasers:
-            laser.move(vel)
-            if laser.off_screen(variables.Ygame1):
-                self.lasers.remove(laser)
-            elif laser.collision(obj):
+        for projectile in self.projectiles:
+            projectile.move(vel)
+            if projectile.off_screen(variables.Ygame1):
+                self.projectiles.remove(projectile)
+            elif projectile.collision(obj):
                 if obj.get_armor():
                     obj.set_armor(False)
                 else:
                     obj.health -= 10
-                self.lasers.remove(laser)
+                self.projectiles.remove(projectile)
 
     def cooldown(self):
         if self.cool_down_counter >= self.COOLDOWN:
@@ -91,8 +91,8 @@ class Ship:
 
     def shoot(self):
         if self.cool_down_counter == 0:
-            laser = Laser(self.x, self.y, self.laser_img)
-            self.lasers.append(laser)
+            projectile = Projectile(self.x, self.y, self.projectile_img)
+            self.projectiles.append(projectile)
             self.cool_down_counter = 1
 
     def get_width(self):
@@ -105,24 +105,25 @@ class Player(Ship):
     def __init__(self, x, y, health=100):
         super().__init__(x, y, health)
         self.ship_img = variables.mainplayerimg
-        self.laser_img = variables.missile
+        self.projectile_img = variables.missile
         self.mask = pygame.mask.from_surface(self.ship_img)
         self.max_health = health
         self.armor = False
 
-    def move_lasers(self, vel, objs):
+    def move_projectiles(self, vel, objs):
         self.cooldown()
-        for laser in self.lasers:
-            laser.move(vel)
-            if laser.off_screen(variables.Ygame1):
-                self.lasers.remove(laser)
+        for projectile in self.projectiles:
+            projectile.move(vel)
+            if projectile.off_screen(variables.Ygame1):
+                self.projectiles.remove(projectile)
             else:
                 for obj in objs:
-                    if laser.collision(obj):
+                    if projectile.collision(obj):
                         objs.remove(obj)
-                        if laser in self.lasers:
-                            self.lasers.remove(laser)
-                        return obj.get_var()
+                        if projectile in self.projectiles:
+                            self.projectiles.remove(projectile)
+                        return obj.get_var(), obj.get_ques()
+        return [None,None]
 
     def draw(self, window):
         self.drawarmor(window)
@@ -148,10 +149,11 @@ class Player(Ship):
 class Enemy(Ship):
     variation = (variables.alien, variables.alien1, variables.alien2)
 
-    def __init__(self, x, y, var, health=100):
+    def __init__(self, x, y, var, ques, health=100):
         super().__init__(x, y, health)
-        self.laser_img = variables.bomb
+        self.projectile_img = variables.bomb
         self.var = var
+        self.ques = ques
         self.ship_img = self.variation[var]
         self.mask = pygame.mask.from_surface(self.ship_img)
 
@@ -163,10 +165,23 @@ class Enemy(Ship):
         elif rando == 1:
             self.x += vel*random.randint(1,3)
 
+    def draw(self, window):
+        super().draw(window)
+        self.drawques(window)
+
+    def drawques(self, window):
+        if self.ques == 1:
+            pygame.draw.circle(window, variables.RED, (self.x-1,self.y-1), 4)
+        elif self.ques == 2:
+            pygame.draw.circle(window, variables.OCEANBLUE, (self.x-1,self.y-1), 4)
+
+    def get_ques(self):
+        return self.ques
+
     def shoot(self):
         if self.cool_down_counter == 0:
-            laser = Laser(self.x-20, self.y, self.laser_img)
-            self.lasers.append(laser)
+            projectile = Projectile(self.x-20, self.y, self.projectile_img)
+            self.projectiles.append(projectile)
             self.cool_down_counter = 1
 
     def get_var(self):

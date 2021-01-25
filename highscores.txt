@@ -3,8 +3,8 @@ bahaa	500
 bahaa	500
 bahaa	500
 bahaa	500
-omar	0
-omar	0
-omar	0
+omar	40
+omar	20
+omar	20
 omar	0
 omar	0

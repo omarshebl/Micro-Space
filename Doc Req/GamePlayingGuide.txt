@@ -1,1 +1,41 @@
 #TODO explains games here
+
+main menu:
+    use the mouse to navigate and click on the button to activate
+
+highscore menu:
+    press on esc to return to main menu
+
+game:
+    use arrows to move and spacebar to shoot
+    you can pause while in active game not question by pressing escape
+
+    you have on your right side your sidebar which has all the info you need
+        i am going to explain some of them only
+        lives: are the the number of aliens you didn't shoot and got away and that number decreases by one every time
+        score: is a multiples of 10 of how many alien you shot
+
+        then you have two colored circles (red, blue)
+        red is for the simple questions and have two number below it the red number is for how many questions you failed to answer and green for success
+        blue is for the hard questiosn and have two number below it the red number is for how many questions you failed to answer and green for success
+
+        then you have at the bottom your power up, they will be faded when you don't have it, and will be fully opaque when you have them
+        then you have the types of aliens down below and how many you killed below each type
+
+    you have 7 powerups, one of them is activated automatically by answering a simple question which is the multiplier powerup
+    the rest:
+        nuke: kills all aliens and activated by key "n"
+        health: increases health to 100 and activated by key ""
+        armor: lets one damage not affect you and activated by key ""
+        revive: restores back lives to 5 and activated by key ""
+        auto: answers your next question automatically for you and activated by key ""
+        smrtmissile: its a missle you launch that will randomly target an alien and kill him instantly and activated by key ""
+        multiplier: multplies your score input by the value you set in variables.py and it is activated automatically
+
+    you have 3 kinds of aliens and 2 kinds of question
+        the 3 kinds of aliens are the same and die from one shot
+        the 2 kinds of quesstions are different and they are notated by a dot on the upper left corner of an alien if he has one {blue for hard, red for simple}
+            the first is a simple question that gives you the multiplier power up with a 15 second timer can be changed in variables.py
+            the second is a harder question that gives you a random power from the 7 excluding the multiplier with a 30 second time that can be also changed
+            answers are not case sensitive also you have to writh "h" for hex values
+

@@ -50,6 +50,8 @@ playervel = 5 # speed of player movement
 enemyvel = 1 # speed of enemy movement
 trajectoryvel = 4 # speed of missiles & bombs movement
 wavelength = 5 # how many enemy spawn at every round
+multiplierval = 2 # duplicates score achieved
+multipliertime = 30 # how many seconds for multiplier
 #font
 mainfont = pygame.font.Font('resources/fonts/GOTHIC.ttf', 25)
 smallfont = pygame.font.Font('resources/fonts/GOTHIC.ttf', 20)
@@ -73,15 +75,34 @@ smrtmissile = pygame.image.load("resources/images/game1/smrtmissile.png")
 nuke = pygame.image.load("resources/images/game1/nuclear-explosion.png")
 auto = pygame.image.load("resources/images/game1/automatic-flash.png")
 revive = pygame.image.load("resources/images/game1/revive.png")
-
+multiplier = pygame.image.load("resources/images/game1/multiplier.png")
 background = pygame.transform.scale(pygame.image.load("resources/images/game1/background-black.png"), screensizegame1)
 
 ##############################################################################################################
+#questions setup
+questionfont = pygame.font.Font('resources/fonts/GOTHIC.ttf', 22)
+Xq = 800
+Yq = 800
+screensizeq = (Xq,Yq)
+armor128 = pygame.image.load("resources/images/game1/armor128.png")
+health128 = pygame.image.load("resources/images/game1/health128.png")
+smrtmissile128 = pygame.image.load("resources/images/game1/smrtmissile128.png")
+nuke128 = pygame.image.load("resources/images/game1/nuclear-explosion128.png")
+auto128 = pygame.image.load("resources/images/game1/automatic-flash128.png")
+revive128 = pygame.image.load("resources/images/game1/revive128.png")
+multiplier128 = pygame.image.load("resources/images/game1/multiplier128.png")
+blackbackground = pygame.transform.scale(pygame.image.load("resources/images/game1/black.jpg"), screensizeq)
+simpleqtime = 15
+hardqtime = 30
 
+##############################################################################################################
 # colors
 WHITE = (255,255,255)
 BLACK = (0,0,0)
 PURPLE = (196,140,232)
+RED = (255, 0, 80)
+GREEN = (0,255,0)
+OCEANBLUE = (50,147,168)
 #text
 introfont = pygame.font.Font('resources/fonts/GOTHICB.ttf', 25)
 introtext = introfont.render('<=> Micro Space <=>', True, BLACK)
