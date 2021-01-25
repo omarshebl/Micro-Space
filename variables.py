@@ -20,6 +20,8 @@ screenstartuppoint = (X/2-128,Y/2-128)
 usernamepoint = (X/2-110,Y/2-100)
 middlepoint = (X/2,Y/2)
 
+##############################################################################################################
+
 # main menu buttons variables
 buttonwidth = 200
 buttonheight = 75
@@ -35,13 +37,23 @@ buttonH = (237,166,85)
 buttonTC = (255,255,255)
 buttonF = pygame.font.Font('resources/fonts/GOTHICB.ttf', 20)
 
-
+##############################################################################################################
 
 #game1 settings
+FPS = 60
+level = 0 # for difficulty over time
+lives = 5 # how many aliens can get by you
+playervel = 5 # speed of player movement
+enemyvel = 1 # speed of enemy movement
+trajectoryvel = 4 # speed of missiles & bombs movement
+wavelength = 5 # how many enemy spawn at every round
+#font
 mainfont = pygame.font.Font('resources/fonts/GOTHIC.ttf', 25)
+# window size
 Xgame1 = 800
 Ygame1 = 800
 screensizegame1 = (Xgame1,Ygame1)
+# images
 alien = pygame.image.load("resources/images/game1/alien.png")
 alien1 = pygame.image.load("resources/images/game1/alien1.png")
 alien2 = pygame.image.load("resources/images/game1/alien2.png")
@@ -50,6 +62,7 @@ missile = pygame.image.load("resources/images/game1/missile.png")
 bomb = pygame.image.load("resources/images/game1/bomb.png")
 background = pygame.transform.scale(pygame.image.load("resources/images/game1/background-black.png"), screensizegame1)
 
+##############################################################################################################
 
 # colors
 WHITE = (255,255,255)

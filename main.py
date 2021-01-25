@@ -42,7 +42,7 @@ def screenstartup():
     global startup
     if startup:
         gamescreen.fill(variables.WHITE)
-        gamescreen.blit(variables.introtext, (270,448))
+        gamescreen.blit(variables.introtext, (variables.X/2 - variables.introtext.get_width()/2,variables.Y/2 + 200))
         for x in range(0,100):
             variables.startscreen.set_alpha(x)
             gamescreen.blit(variables.startscreen, variables.screenstartuppoint)
@@ -81,11 +81,12 @@ def getusername():
                     break
                 elif (not len(username) > 15) and event.unicode:
                     username += event.unicode
-            gamescreen.fill(variables.BLACK)
-            gamescreen.blit(variables.getusernametext, ((variables.X / 2 - variables.getusernametext.get_width() / 2), (variables.Y / 2 - 50)))
-            usernametext = variables.introfont.render(username, True, variables.PURPLE)
-            gamescreen.blit(usernametext, ((variables.X / 2 - usernametext.get_width() / 2), (variables.Y / 2)))
-            screenupdate()
+                gamescreen.fill(variables.BLACK)
+                gamescreen.blit(variables.getusernametext, ((variables.X / 2 - variables.getusernametext.get_width() / 2), (variables.Y / 2 - 50)))
+                usernametext = variables.introfont.render(username, True, variables.PURPLE)
+                gamescreen.blit(usernametext, ((variables.X / 2 - usernametext.get_width() / 2), (variables.Y / 2)))
+                screenupdate()
+    screenupdate(variables.BLACK)
 
 def drawbuttons():
     menuB1.draw(gamescreen, variables.WHITE)
@@ -105,7 +106,7 @@ def mainmenu():
             menuB3.isOver(pos)
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if menuB1.isOver(pos):
-                    pass #TODO play games
+                    game1(gamescreen, username)
                 if menuB2.isOver(pos):
                     pass #TODO show high scores
                 if menuB3.isOver(pos):
@@ -118,4 +119,4 @@ while not exiting:
     #screenstartup()
     #getusername()
     #mainmenu()
-    exiting = game1(gamescreen,username)
+    game1(gamescreen, username)
