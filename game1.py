@@ -6,6 +6,7 @@ import variables # game variables file "variables.py"
 from variables import collide
 from classes import Player
 from classes import Enemy
+from highscores import writescore
 
 pygame.init()
 pygame.font.init()
@@ -20,6 +21,8 @@ playervelocity = variables.playervel
 enemyvelocity = variables.enemyvel
 trajectoryvelocity = variables.trajectoryvel
 wavelength = variables.wavelength
+
+score = 0
 
 player = Player(400, 600)
 enemies = []
@@ -76,31 +79,31 @@ def checkloss():
 def lostgame():
     global lost, exiting
     if lost:
+        writescore(score)
         exiting = True
         pygame.time.delay(3000)
 
-def redrawwindow(WIN, username):
+def redrawsidebar(WIN, username):
+    WIN.fill(variables.BLACK)
+    WIN.blit(variables.background, (0, 0))
+    username_label = variables.mainfont.render(username, 1, variables.WHITE)  # TODO change coloring here and below
+    levels_label = variables.mainfont.render(f"Level: {level}", 1, variables.WHITE)
+    lives_label = variables.mainfont.render(f"Lives: {lives}", 1, variables.WHITE)
+    WIN.blit(username_label, (810, 20))
+    WIN.blit(lives_label, (810, 60))
+    WIN.blit(levels_label, (810, 100))
+
+def redrawgame(WIN, username):
     global player
     global enemies
     global lost
-    WIN.fill(variables.BLACK)
-    WIN.blit(variables.background, (0,0))
-    username_label = variables.mainfont.render(username, 1, variables.WHITE) #TODO change coloring here and below
-    levels_label = variables.mainfont.render(f"Level: {level}", 1, variables.WHITE)
-    lives_label = variables.mainfont.render(f"Lives: {lives}", 1, variables.WHITE)
-    WIN.blit(username_label, (810,20))
-    WIN.blit(lives_label, (810,60))
-    WIN.blit(levels_label, (810, 100))
-
+    redrawsidebar(WIN, username)
     for enemyd in enemies:
         enemyd.draw(WIN)
-
     player.draw(WIN)
-
     if lost is True:
         lost_label = variables.mainfont.render("You Lost!!", 1, (255, 255, 255))
         WIN.blit(lost_label, (variables.Xgame1 / 2 - lost_label.get_width() / 2, 400))
-
     pygame.display.update()
 
 def game1(WIN, username):
@@ -108,7 +111,7 @@ def game1(WIN, username):
         clock.tick(FPS)
         checkexiting()
         checkloss()
-        redrawwindow(WIN, username)
+        redrawgame(WIN, username)
         lostgame()
         newenemywave()
         checkmovement()

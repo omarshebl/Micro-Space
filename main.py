@@ -5,6 +5,8 @@ import random
 import variables # game variables file "variables.py"
 from classes import Button
 from game1 import game1
+from highscores import writescore
+from highscores import readscores
 
 username = "omar"
 
@@ -88,7 +90,40 @@ def getusername():
                 screenupdate()
     screenupdate(variables.BLACK)
 
-def drawbuttons():
+def printscore():
+    scores = readscores()
+    gamescreen.fill(variables.BLACK)
+    gamescreen.blit(variables.highscorestext,((variables.X / 2 - variables.highscorestext.get_width() / 2), 50))
+    NAME = variables.introfont.render("NAME", True, variables.PURPLE)
+    SCORE = variables.introfont.render("SCORE", True, variables.PURPLE)
+    gamescreen.blit(NAME,(300, 100))
+    gamescreen.blit(SCORE,(600, 100))
+
+
+    i = 1
+    for name, score in scores:
+        nametext = variables.introfont.render(f"{name}", True, variables.PURPLE)
+        scoretext = variables.introfont.render(f"{score}", True, variables.PURPLE)
+        gamescreen.blit(nametext, (300, 100 + 50*i))
+        gamescreen.blit(scoretext, (600, 100 + 50*i))
+        i += 1
+
+    screenupdate()
+    exitscores = False
+    while not exitscores:
+        time.sleep(0.01)
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                quit()
+            if event.type == pygame.KEYDOWN:
+                keys = pygame.key.get_pressed()
+                if keys[pygame.K_ESCAPE]:
+                    exitscores = True
+                    screenupdate(variables.BLACK)
+
+
+
+def drawmainmenu():
     menuB1.draw(gamescreen, variables.WHITE)
     menuB2.draw(gamescreen, variables.WHITE)
     menuB3.draw(gamescreen, variables.WHITE)
@@ -98,7 +133,7 @@ def mainmenu():
     global exiting
     while not exiting:
         checkexiting()
-        drawbuttons()
+        drawmainmenu()
         for event in pygame.event.get():
             pos = pygame.mouse.get_pos()
             menuB1.isOver(pos)
@@ -108,15 +143,16 @@ def mainmenu():
                 if menuB1.isOver(pos):
                     game1(gamescreen, username)
                 if menuB2.isOver(pos):
-                    pass #TODO show high scores
+                    printscore()
                 if menuB3.isOver(pos):
                     exiting = True
                     pygame.quit()
 
 # ---------------------- main loop -----------------------
-while not exiting:
-    checkexiting()
+#while not exiting:
+    #checkexiting()
     #screenstartup()
     #getusername()
     #mainmenu()
-    game1(gamescreen, username)
+game1(gamescreen, username)
+

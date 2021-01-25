@@ -19,6 +19,9 @@ screensize = (X,Y)
 screenstartuppoint = (X/2-128,Y/2-128)
 usernamepoint = (X/2-110,Y/2-100)
 middlepoint = (X/2,Y/2)
+##############################################################################################################
+
+
 
 ##############################################################################################################
 
@@ -73,5 +76,6 @@ introfont = pygame.font.Font('resources/fonts/GOTHICB.ttf', 25)
 introtext = introfont.render('<=> Micro Space <=>', True, BLACK)
 
 getusernametext = introfont.render('Please enter your name:', True, PURPLE)
+highscorestext = introfont.render("HIGHSCORES", True, PURPLE)
 
 
